@@ -1,0 +1,19 @@
+{% if S_VIEWTOPIC or S_IN_UCP or S_IN_POSTING %}
+	{% if IMGSLIDERS_CLASS == 'fancybox' %}
+		{% INCLUDECSS '@tatiana5_imgsliders/jquery.fancybox.min.css' %}
+	{% endif %}
+
+	{% if IMGSLIDERS_CLASS == 'photoswipe' %}
+		{% INCLUDECSS '@tatiana5_imgsliders/photoswipe.css' %}
+		{% INCLUDECSS '@tatiana5_imgsliders/default-skin/default-skin.css' %}
+	{% endif %}
+
+	{% if IMGSLIDERS_MAX_SIZE > 0 %}
+	<style>
+		.postbody img.postimage, .postbody a.{{ IMGSLIDERS_CLASS }} {
+			max-width: min(100%, {{ IMGSLIDERS_MAX_SIZE }}px);
+			max-height: {{ IMGSLIDERS_MAX_SIZE }}px;
+		}
+	</style>
+	{% endif %}
+{% endif %}

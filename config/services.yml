@@ -1,0 +1,8 @@
+services:
+    tatiana5.imgsliders.listener:
+        class: tatiana5\imgsliders\event\listener
+        arguments:
+            - '@config'
+            - '@template'
+        tags:
+            - { name: event.listener }
