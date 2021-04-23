@@ -39,7 +39,7 @@ services:
 
 branches:
   only:
-    - master
+    - main
 
 before_install:
   - sudo mkdir travis
