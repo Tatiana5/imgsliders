@@ -148,12 +148,12 @@ function imgsliders_add(e, elements) {
 }
 
 $(document).ready(function (e) {
-	imgsliders_add(e, $('.post .content, .post .file'));
+	imgsliders_add(e, $('.post .content, .post .file, .post .attachbox'));
 });
 
 //QuickReply Reloaded
 $('#qr_posts').on('qr_completed', function (e) {
-	imgsliders_add(e, $('.post .content, .post .file'));
+	imgsliders_add(e, $('.post .content, .post .file, .post .attachbox'));
 });
 $('#qr_postform').on('ajax_submit_preview', function (e) {
 	imgsliders_add(e, $('#preview'));
