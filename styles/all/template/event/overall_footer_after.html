@@ -1,4 +1,4 @@
-{% if S_VIEWTOPIC or S_IN_UCP or S_IN_POSTING %}
+{% if S_VIEWTOPIC or S_IN_UCP or S_IN_POSTING or (S_IN_SEARCH or TOTAL_MATCHES) %}
 <script>
 var imgsliders_class = '.' + '{{ IMGSLIDERS_CLASS|addslashes }}',
 	imgsliders_min_size = {{ IMGSLIDERS_MIN_SIZE }},
