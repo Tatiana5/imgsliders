@@ -148,7 +148,7 @@ function imgsliders_add(e, elements) {
 }
 
 $(document).ready(function (e) {
-	imgsliders_add(e, $('.post .content, .post .file, .post .attachbox'));
+	imgsliders_add(e, $('.post .content, .post .file, .post .attachbox, #mchat-messages .mchat-text'));
 });
 
 //QuickReply Reloaded
@@ -158,6 +158,12 @@ $('#qr_posts').on('qr_completed', function (e) {
 $('#qr_postform').on('ajax_submit_preview', function (e) {
 	imgsliders_add(e, $('#preview'));
 });
+
+if (typeof mChat !== 'undefined') {
+	$(mChat).on('mchat_add_message_animate_after', function (e) {
+		imgsliders_add(e, $('#mchat-messages .mchat-text'));
+	});
+}
 
 // Simple spoiler
 $('.page-body').on('click', '.spoiler-header', function(e) {
